@@ -1,0 +1,1630 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>楊千葳｜Personal Portfolio</title>
+
+    <meta name="description" content="楊千葳的個人作品集網站｜教育 × 數位學習 × 創意設計">
+
+    <style>
+        /* =========================
+           基本設定
+        ========================= */
+
+        :root {
+            --cream: #F6F0E8;
+            --cream-dark: #EDE2D4;
+            --pink: #D8A6A0;
+            --pink-light: #E9C8C3;
+            --brown: #6B5548;
+            --dark: #3F3530;
+            --sage: #A8AD98;
+            --white: #FFFDF9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                Arial,
+                sans-serif;
+
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           導覽列
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(246, 240, 232, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(107, 85, 72, 0.08);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            letter-spacing: 2px;
+            color: var(--brown);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--brown);
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+
+        /* =========================
+           首頁 Hero
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 150px 30px 80px;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+
+            align-items: center;
+            gap: 80px;
+        }
+
+        .small-title {
+            color: var(--pink);
+            font-size: 14px;
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: 1.05;
+
+            font-weight: normal;
+            color: var(--dark);
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--pink);
+        }
+
+        .hero-description {
+            max-width: 580px;
+
+            color: #6f625b;
+            font-size: 17px;
+
+            margin-bottom: 38px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 26px;
+
+            border-radius: 50px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--brown);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--brown);
+            color: var(--brown);
+        }
+
+        .btn-outline:hover {
+            background: var(--brown);
+            color: white;
+        }
+
+
+        /* =========================
+           Hero 視覺
+        ========================= */
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-card {
+            width: 330px;
+            height: 400px;
+
+            background: var(--white);
+
+            border-radius: 180px 180px 25px 25px;
+
+            box-shadow:
+                0 25px 60px rgba(63, 53, 48, 0.12);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-card::before {
+            content: "";
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: var(--pink-light);
+
+            position: absolute;
+            top: 60px;
+            left: 55px;
+        }
+
+        .visual-text {
+            position: relative;
+            z-index: 2;
+
+            text-align: center;
+
+            font-family: Georgia, serif;
+            color: var(--brown);
+        }
+
+        .visual-text .initial {
+            font-size: 90px;
+            line-height: 1;
+        }
+
+        .visual-text p {
+            font-size: 13px;
+            letter-spacing: 4px;
+            margin-top: 15px;
+        }
+
+        .decor {
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border: 1px solid var(--pink);
+
+            border-radius: 50%;
+
+            right: 30px;
+            bottom: 40px;
+        }
+
+        .decor-2 {
+            position: absolute;
+
+            width: 35px;
+            height: 35px;
+
+            background: var(--sage);
+
+            border-radius: 50%;
+
+            left: 30px;
+            top: 50px;
+        }
+
+
+        /* =========================
+           Section 共用
+        ========================= */
+
+        section {
+            padding: 110px 30px;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+
+            color: var(--pink);
+
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 46px;
+            font-weight: normal;
+
+            color: var(--dark);
+
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           About
+        ========================= */
+
+        #about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .about-intro {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 27px;
+            line-height: 1.6;
+
+            color: var(--brown);
+        }
+
+        .about-text {
+            color: #71655e;
+            font-size: 16px;
+        }
+
+        .about-text p {
+            margin-bottom: 22px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+        .tag {
+            border: 1px solid var(--cream-dark);
+
+            padding: 7px 15px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            color: var(--brown);
+
+            background: var(--cream);
+        }
+
+
+        /* =========================
+           Works
+        ========================= */
+
+        #works {
+            background: var(--cream);
+        }
+
+        .works-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 28px;
+        }
+
+        .work-card {
+            background: var(--white);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+
+            border: 1px solid rgba(107, 85, 72, 0.05);
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 45px rgba(63, 53, 48, 0.12);
+        }
+
+        .work-image {
+            height: 240px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .work-image.earth {
+            background: var(--cream-dark);
+        }
+
+        .work-image.pink {
+            background: var(--pink-light);
+        }
+
+        .work-image.sage {
+            background: #D7D9C9;
+        }
+
+        .work-image.brown {
+            background: #BBA89A;
+        }
+
+        .work-number {
+            font-family: Georgia, serif;
+
+            font-size: 100px;
+
+            color: rgba(255,255,255,0.65);
+        }
+
+        .work-content {
+            padding: 28px;
+        }
+
+        .work-category {
+            font-size: 11px;
+            letter-spacing: 2px;
+
+            color: var(--pink);
+
+            margin-bottom: 8px;
+        }
+
+        .work-content h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 25px;
+
+            font-weight: normal;
+
+            margin-bottom: 10px;
+        }
+
+        .work-content p {
+            font-size: 14px;
+            color: #766a63;
+
+            margin-bottom: 20px;
+        }
+
+        .work-tools {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tool {
+            font-size: 11px;
+
+            background: var(--cream);
+
+            padding: 4px 10px;
+
+            border-radius: 20px;
+
+            color: var(--brown);
+        }
+
+
+        /* =========================
+           Coming Soon
+        ========================= */
+
+        .coming-soon {
+            margin-top: 28px;
+
+            padding: 45px;
+
+            border: 1px dashed var(--pink);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.35);
+        }
+
+        .coming-soon span {
+            font-family: Georgia, serif;
+
+            color: var(--pink);
+
+            letter-spacing: 4px;
+
+            font-size: 13px;
+        }
+
+        .coming-soon h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 25px;
+
+            font-weight: normal;
+
+            margin: 12px 0;
+        }
+
+        .coming-soon p {
+            color: #81756e;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           Experience
+        ========================= */
+
+        #experience {
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+
+            max-width: 850px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 80px;
+            top: 0;
+            bottom: 0;
+
+            width: 1px;
+
+            background: var(--cream-dark);
+        }
+
+        .timeline-item {
+            display: grid;
+
+            grid-template-columns: 160px 1fr;
+
+            gap: 40px;
+
+            position: relative;
+
+            margin-bottom: 50px;
+        }
+
+        .timeline-year {
+            color: var(--pink);
+
+            font-family: Georgia, serif;
+
+            font-size: 16px;
+
+            text-align: right;
+
+            padding-right: 35px;
+        }
+
+        .timeline-content {
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: "";
+
+            position: absolute;
+
+            width: 9px;
+            height: 9px;
+
+            background: var(--pink);
+
+            border-radius: 50%;
+
+            left: -45px;
+            top: 10px;
+        }
+
+        .timeline-content h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 23px;
+
+            font-weight: normal;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #766a63;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           Research
+        ========================= */
+
+        #research {
+            background: var(--cream);
+        }
+
+        .research-box {
+            background: var(--brown);
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 55px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .research-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 50%;
+
+            right: -70px;
+            bottom: -100px;
+        }
+
+        .research-label {
+            color: var(--pink-light);
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+        }
+
+        .research-box h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 32px;
+
+            font-weight: normal;
+
+            max-width: 750px;
+
+            line-height: 1.5;
+
+            margin: 15px 0 25px;
+        }
+
+        .research-box p {
+            max-width: 700px;
+
+            color: rgba(255,255,255,0.75);
+
+            font-size: 14px;
+        }
+
+        .research-tags {
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-top: 25px;
+        }
+
+        .research-tag {
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 30px;
+
+            padding: 6px 14px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           Skills
+        ========================= */
+
+        #skills {
+            background: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .skill-card {
+            padding: 35px 30px;
+
+            background: var(--cream);
+
+            border-radius: 20px;
+        }
+
+        .skill-icon {
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: 22px;
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #766a63;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           Contact
+        ========================= */
+
+        #contact {
+            background: var(--pink-light);
+
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: Georgia, "Noto Serif TC", serif;
+
+            font-size: clamp(40px, 6vw, 70px);
+
+            font-weight: normal;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-description {
+            color: var(--brown);
+
+            margin-bottom: 35px;
+        }
+
+        .contact-email {
+            display: inline-block;
+
+            font-family: Georgia, serif;
+
+            font-size: 20px;
+
+            color: var(--brown);
+
+            border-bottom: 1px solid var(--brown);
+
+            padding-bottom: 4px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+            background: var(--dark);
+
+            color: rgba(255,255,255,0.65);
+
+            padding: 30px;
+
+            text-align: center;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RWD
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                height: 65px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+                padding-top: 130px;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .visual-card {
+                width: 280px;
+                height: 340px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+
+                gap: 5px;
+
+                padding-left: 25px;
+            }
+
+            .timeline-year {
+                text-align: left;
+
+                padding: 0;
+            }
+
+            .timeline-content::before {
+                left: -29px;
+            }
+
+            .research-box {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         導覽列
+    ========================= -->
+
+    <header>
+        <nav class="nav">
+
+            <a href="#home" class="logo">
+                QIAN-WEI
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#research">RESEARCH</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+
+                <div class="small-title">
+                    EDUCATION × DIGITAL × CREATIVE
+                </div>
+
+                <h1>
+                    Qian-Wei<br>
+                    <span>Yang.</span>
+                </h1>
+
+                <p class="hero-description">
+                    將教育想法，轉化為有溫度的學習體驗。
+                    我是一名教育學系學生，關注數位學習、
+                    教材設計與互動媒體，喜歡探索教育與創意之間的可能性。
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#works" class="btn btn-primary">
+                        查看作品
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        關於我
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="decor-2"></div>
+
+                <div class="visual-card">
+
+                    <div class="visual-text">
+
+                        <div class="initial">
+                            C
+                        </div>
+
+                        <p>
+                            EDUCATION<br>
+                            DESIGN
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="decor"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    01 / ABOUT ME
+                </div>
+
+                <h2 class="section-title">
+                    關於我
+                </h2>
+
+
+                <div class="about-grid">
+
+                    <div class="about-intro">
+                        我相信好的教育設計，
+                        不只是把知識放進教材，
+                        而是讓學習真正發生。
+                    </div>
+
+
+                    <div class="about-text">
+
+                        <p>
+                            我是臺北市立大學教育學系學生，
+                            對教育設計、數位學習與互動媒材有興趣。
+                        </p>
+
+                        <p>
+                            在學習與創作的過程中，我喜歡將抽象的知識
+                            轉化為容易理解、具有互動性的學習內容，
+                            並嘗試結合遊戲、視覺設計與數位工具，
+                            創造更貼近學習者的體驗。
+                        </p>
+
+                        <p>
+                            未來希望持續探索教育、科技與設計之間的交集，
+                            將自己的專業能力應用於教育現場與數位學習領域。
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span class="tag">
+                                Educational Design
+                            </span>
+
+                            <span class="tag">
+                                Digital Learning
+                            </span>
+
+                            <span class="tag">
+                                Game-based Learning
+                            </span>
+
+                            <span class="tag">
+                                Visual Design
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WORKS
+        ========================= -->
+
+        <section id="works">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    02 / SELECTED WORKS
+                </div>
+
+                <h2 class="section-title">
+                    作品集
+                </h2>
+
+
+                <div class="works-grid">
+
+
+                    <!-- 作品 01 -->
+
+                    <article class="work-card">
+
+                        <div class="work-image earth">
+
+                            <div class="work-number">
+                                01
+                            </div>
+
+                        </div>
+
+                        <div class="work-content">
+
+                            <div class="work-category">
+                                GAME-BASED LEARNING
+                            </div>
+
+                            <h3>
+                                避震任務
+                            </h3>
+
+                            <p>
+                                以地震防災知識為主題的遊戲式教材，
+                                透過互動情境讓學生練習正確的避震行為。
+                            </p>
+
+                            <div class="work-tools">
+
+                                <span class="tool">
+                                    Construct 3
+                                </span>
+
+                                <span class="tool">
+                                    Educational Design
+                                </span>
+
+                                <span class="tool">
+                                    Game Design
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 作品 02 -->
+
+                    <article class="work-card">
+
+                        <div class="work-image pink">
+
+                            <div class="work-number">
+                                02
+                            </div>
+
+                        </div>
+
+                        <div class="work-content">
+
+                            <div class="work-category">
+                                DIGITAL LEARNING
+                            </div>
+
+                            <h3>
+                                布農族文化數位教材
+                            </h3>
+
+                            <p>
+                                以多元文化教育為主題，
+                                設計適合國小學生使用的數位教材與互動活動。
+                            </p>
+
+                            <div class="work-tools">
+
+                                <span class="tool">
+                                    Digital Learning
+                                </span>
+
+                                <span class="tool">
+                                    Multicultural Education
+                                </span>
+
+                                <span class="tool">
+                                    Interactive Design
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 作品 03 -->
+
+                    <article class="work-card">
+
+                        <div class="work-image sage">
+
+                            <div class="work-number">
+                                03
+                            </div>
+
+                        </div>
+
+                        <div class="work-content">
+
+                            <div class="work-category">
+                                MUSIC × EDUCATION
+                            </div>
+
+                            <h3>
+                                天方夜譚交響組曲
+                            </h3>
+
+                            <p>
+                                將古典音樂內容轉化為學生容易理解、
+                                可以探索與互動的數位學習素材。
+                            </p>
+
+                            <div class="work-tools">
+
+                                <span class="tool">
+                                    Music Education
+                                </span>
+
+                                <span class="tool">
+                                    Digital Material
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 作品 04 -->
+
+                    <article class="work-card">
+
+                        <div class="work-image brown">
+
+                            <div class="work-number">
+                                04
+                            </div>
+
+                        </div>
+
+                        <div class="work-content">
+
+                            <div class="work-category">
+                                TEACHING DESIGN
+                            </div>
+
+                            <h3>
+                                教學設計作品
+                            </h3>
+
+                            <p>
+                                收錄課程設計、教案、學習活動與教學媒材，
+                                展現教育理論轉化為實際教學設計的過程。
+                            </p>
+
+                            <div class="work-tools">
+
+                                <span class="tool">
+                                    Lesson Design
+                                </span>
+
+                                <span class="tool">
+                                    Teaching Material
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- 未來作品 -->
+
+                <div class="coming-soon">
+
+                    <span>
+                        COMING SOON
+                    </span>
+
+                    <h3>
+                        未來作品將持續更新
+                    </h3>
+
+                    <p>
+                        這裡將放置未來的教育專題、實習成果、
+                        數位教材與其他創作作品。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================= -->
+
+        <section id="experience">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    03 / EXPERIENCE
+                </div>
+
+                <h2 class="section-title">
+                    學習與經歷
+                </h2>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            2026 — NOW
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                臺北市立大學｜教育學系
+                            </h3>
+
+                            <p>
+                                學習教育理論、課程設計、教材教法，
+                                並參與數位教材與教學活動設計。
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            2026
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                數位教材與遊戲式學習
+                            </h3>
+
+                            <p>
+                                使用 Construct 3 設計教育遊戲，
+                                嘗試將學習內容轉化為互動式體驗。
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            2026
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                多元文化教育教材設計
+                            </h3>
+
+                            <p>
+                                以布農族文化為主題進行教材、
+                                講義與互動活動設計。
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            FUTURE
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                教育實習與專業發展
+                            </h3>
+
+                            <p>
+                                未來將持續累積教學實踐、
+                                數位教材與教育專案經驗。
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESEARCH
+        ========================= -->
+
+        <section id="research">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    04 / RESEARCH
+                </div>
+
+                <h2 class="section-title">
+                    研究
+                </h2>
+
+
+                <div class="research-box">
+
+                    <div class="research-label">
+                        RESEARCH INTEREST
+                    </div>
+
+                    <h3>
+                        家庭社經背景對108課綱下
+                        學習歷程檔案「多元學習表現」
+                        豐富度影響之研究
+                    </h3>
+
+                    <p>
+                        關注家庭社經背景、教育資源與學生
+                        多元學習表現之間的關係，
+                        探討不同家庭條件是否可能影響學生
+                        在高中階段所累積的學習成果。
+                    </p>
+
+                    <div class="research-tags">
+
+                        <span class="research-tag">
+                            Educational Sociology
+                        </span>
+
+                        <span class="research-tag">
+                            Learning Portfolio
+                        </span>
+
+                        <span class="research-tag">
+                            Educational Inequality
+                        </span>
+
+                        <span class="research-tag">
+                            Multiple Learning Performance
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section id="skills">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    05 / SKILLS
+                </div>
+
+                <h2 class="section-title">
+                    能力與工具
+                </h2>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Educational Design
+                        </h3>
+
+                        <p>
+                            教案設計、課程規劃、
+                            學習活動設計、教材教法、
+                            多元文化教育。
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            ◇
+                        </div>
+
+                        <h3>
+                            Digital & Interactive
+                        </h3>
+
+                        <p>
+                            Construct 3、HTML、CSS、
+                            JavaScript，以及互動教材與
+                            遊戲式學習設計。
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            ○
+                        </div>
+
+                        <h3>
+                            Visual Design
+                        </h3>
+
+                        <p>
+                            Canva、PowerPoint、
+                            UI 視覺設計與數位教材版面設計。
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section id="contact">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    06 / CONTACT
+                </div>
+
+                <h2 class="contact-title">
+                    Let's create<br>
+                    something meaningful.
+                </h2>
+
+                <p class="contact-description">
+                    如果你想了解我的作品、研究或合作可能，
+                    歡迎與我聯繫。
+                </p>
+
+                <!-- 把下面的 Email 換成自己的 -->
+
+                <a
+                    href="mailto:your.email@example.com"
+                    class="contact-email"
+                >
+                    your.email@example.com
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Qian-Wei Yang.
+        Personal Portfolio.
+
+    </footer>
+
+
+</body>
+</html>
+```

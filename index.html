@@ -10,6 +10,10 @@
     <meta name="description" content="楊千葳的個人作品集網站｜教育 × 數位學習 × 創意設計">
 
     <style>
+
+
+
+
         /* =========================
            基本設定
         ========================= */
@@ -25,23 +29,17 @@
             --white: #FFFDF9;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family:
-                "Noto Sans TC",
-                "Microsoft JhengHei",
-                Arial,
-                sans-serif;
-
             background: var(--cream);
             color: var(--dark);
             line-height: 1.8;
@@ -89,7 +87,7 @@
         }
 
         .logo {
-            font-family: Georgia, serif;
+            font-family: Georgia, serif !important;
             font-size: 22px;
             letter-spacing: 2px;
             color: var(--brown);
@@ -141,7 +139,7 @@
         }
 
         .hero h1 {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: clamp(55px, 8vw, 100px);
             line-height: 1.05;
@@ -212,63 +210,82 @@
 
         .hero-visual {
             position: relative;
-            height: 500px;
+
+            height: 560px;
 
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
         }
 
-        .visual-card {
-            width: 330px;
-            height: 400px;
+ .visual-card {
+    width: 330px;
+    height: 440px;
 
-            background: var(--white);
+    background: var(--white);
 
-            border-radius: 180px 180px 25px 25px;
+    border-radius: 180px 180px 25px 25px;
 
-            box-shadow:
-                0 25px 60px rgba(63, 53, 48, 0.12);
+    box-shadow:
+        0 25px 60px rgba(63, 53, 48, 0.12);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            position: relative;
-            overflow: hidden;
-        }
+    position: relative;
+    overflow: hidden;
+}
 
-        .visual-card::before {
-            content: "";
+.visual-card::before {
+    content: "";
 
-            width: 220px;
-            height: 220px;
+    width: 220px;
+    height: 220px;
 
-            border-radius: 50%;
+    border-radius: 50%;
 
-            background: var(--pink-light);
+    background: var(--pink-light);
 
-            position: absolute;
-            top: 60px;
-            left: 55px;
-        }
+    position: absolute;
+    top: 60px;
+    left: 50%;
 
-        .visual-text {
-            position: relative;
-            z-index: 2;
+    transform: translateX(-50%);
+}
 
-            text-align: center;
+.visual-text {
+    position: absolute;
 
-            font-family: Georgia, serif;
-            color: var(--brown);
-        }
+    z-index: 2;
+
+    width: 220px;
+    height: 220px;
+
+    top: 60px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--brown);
+}
 
         .visual-text .initial {
+            font-family: Georgia, serif !important;
             font-size: 90px;
             line-height: 1;
         }
 
         .visual-text p {
+            font-family: Georgia, serif !important;
             font-size: 13px;
             letter-spacing: 4px;
             margin-top: 15px;
@@ -326,7 +343,7 @@
         }
 
         .section-title {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 46px;
             font-weight: normal;
@@ -355,7 +372,7 @@
         }
 
         .about-intro {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 27px;
             line-height: 1.6;
@@ -454,12 +471,8 @@
             background: #D7D9C9;
         }
 
-        .work-image.brown {
-            background: #BBA89A;
-        }
-
         .work-number {
-            font-family: Georgia, serif;
+            font-family: Georgia, serif !important;
 
             font-size: 100px;
 
@@ -471,6 +484,8 @@
         }
 
         .work-category {
+            font-family: Georgia, serif !important;
+
             font-size: 11px;
             letter-spacing: 2px;
 
@@ -480,7 +495,7 @@
         }
 
         .work-content h3 {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 25px;
 
@@ -516,25 +531,37 @@
 
 
         /* =========================
-           Coming Soon
+           第四格 Coming Soon
         ========================= */
 
-        .coming-soon {
-            margin-top: 28px;
-
-            padding: 45px;
+        .coming-soon-card {
+            background: rgba(255,255,255,0.35);
 
             border: 1px dashed var(--pink);
 
             border-radius: 20px;
 
+            min-height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
 
-            background: rgba(255,255,255,0.35);
+            padding: 45px 30px;
+
+            transition: 0.4s;
         }
 
-        .coming-soon span {
-            font-family: Georgia, serif;
+        .coming-soon-card:hover {
+            background: rgba(255,255,255,0.55);
+
+            transform: translateY(-8px);
+        }
+
+        .coming-soon-inner span {
+            font-family: Georgia, serif !important;
 
             color: var(--pink);
 
@@ -543,8 +570,8 @@
             font-size: 13px;
         }
 
-        .coming-soon h3 {
-            font-family: Georgia, "Noto Serif TC", serif;
+        .coming-soon-inner h3 {
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 25px;
 
@@ -553,7 +580,7 @@
             margin: 12px 0;
         }
 
-        .coming-soon p {
+        .coming-soon-inner p {
             color: #81756e;
 
             font-size: 14px;
@@ -603,7 +630,7 @@
         .timeline-year {
             color: var(--pink);
 
-            font-family: Georgia, serif;
+            font-family: Georgia, serif !important;
 
             font-size: 16px;
 
@@ -633,7 +660,7 @@
         }
 
         .timeline-content h3 {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 23px;
 
@@ -696,7 +723,7 @@
         }
 
         .research-box h3 {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 32px;
 
@@ -769,7 +796,7 @@
         }
 
         .skill-card h3 {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: 22px;
 
@@ -796,7 +823,7 @@
         }
 
         .contact-title {
-            font-family: Georgia, "Noto Serif TC", serif;
+            font-family: Georgia, "Noto Serif TC", serif !important;
 
             font-size: clamp(40px, 6vw, 70px);
 
@@ -814,7 +841,7 @@
         .contact-email {
             display: inline-block;
 
-            font-family: Georgia, serif;
+            font-family: Georgia, serif !important;
 
             font-size: 20px;
 
@@ -867,13 +894,18 @@
                 padding-top: 130px;
             }
 
-            .hero-visual {
-                height: 400px;
-            }
+.hero-visual {
+    position: relative;
+    height: 500px;
+}
 
             .visual-card {
                 width: 280px;
-                height: 340px;
+                height: 460px;
+            }
+
+            .visual-card::before {
+                left: 30px;
             }
 
             .about-grid {
@@ -884,6 +916,10 @@
 
             .works-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .coming-soon-card {
+                min-height: 300px;
             }
 
             .skills-grid {
@@ -916,32 +952,52 @@
                 padding: 35px 25px;
             }
         }
+
     </style>
 </head>
 
 
 <body>
 
+
     <!-- =========================
          導覽列
     ========================= -->
 
     <header>
+
         <nav class="nav">
 
             <a href="#home" class="logo">
-                QIAN-WEI
+                CHI-WEI
             </a>
 
             <ul class="nav-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#works">WORKS</a></li>
-                <li><a href="#experience">EXPERIENCE</a></li>
-                <li><a href="#research">RESEARCH</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+
+                <li>
+                    <a href="#about">ABOUT</a>
+                </li>
+
+                <li>
+                    <a href="#works">WORKS</a>
+                </li>
+
+                <li>
+                    <a href="#experience">EXPERIENCE</a>
+                </li>
+
+                <li>
+                    <a href="#research">RESEARCH</a>
+                </li>
+
+                <li>
+                    <a href="#contact">CONTACT</a>
+                </li>
+
             </ul>
 
         </nav>
+
     </header>
 
 
@@ -953,6 +1009,7 @@
 
         <section class="hero" id="home">
 
+
             <div class="hero-text">
 
                 <div class="small-title">
@@ -960,7 +1017,7 @@
                 </div>
 
                 <h1>
-                    Qian-Wei<br>
+                    Chi-Wei<br>
                     <span>Yang.</span>
                 </h1>
 
@@ -971,6 +1028,7 @@
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#works" class="btn btn-primary">
                         查看作品
                     </a>
@@ -978,6 +1036,7 @@
                     <a href="#about" class="btn btn-outline">
                         關於我
                     </a>
+
                 </div>
 
             </div>
@@ -986,6 +1045,7 @@
             <div class="hero-visual">
 
                 <div class="decor-2"></div>
+
 
                 <div class="visual-card">
 
@@ -1004,11 +1064,13 @@
 
                 </div>
 
+
                 <div class="decor"></div>
 
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -1030,10 +1092,13 @@
 
                 <div class="about-grid">
 
+
                     <div class="about-intro">
+
                         我相信好的教育設計，
                         不只是把知識放進教材，
                         而是讓學習真正發生。
+
                     </div>
 
 
@@ -1086,6 +1151,7 @@
         </section>
 
 
+
         <!-- =========================
              WORKS
         ========================= -->
@@ -1093,6 +1159,7 @@
         <section id="works">
 
             <div class="section-inner">
+
 
                 <div class="section-label">
                     02 / SELECTED WORKS
@@ -1118,6 +1185,7 @@
 
                         </div>
 
+
                         <div class="work-content">
 
                             <div class="work-category">
@@ -1132,6 +1200,7 @@
                                 以地震防災知識為主題的遊戲式教材，
                                 透過互動情境讓學生練習正確的避震行為。
                             </p>
+
 
                             <div class="work-tools">
 
@@ -1154,6 +1223,7 @@
                     </article>
 
 
+
                     <!-- 作品 02 -->
 
                     <article class="work-card">
@@ -1165,6 +1235,7 @@
                             </div>
 
                         </div>
+
 
                         <div class="work-content">
 
@@ -1180,6 +1251,7 @@
                                 以多元文化教育為主題，
                                 設計適合國小學生使用的數位教材與互動活動。
                             </p>
+
 
                             <div class="work-tools">
 
@@ -1202,6 +1274,7 @@
                     </article>
 
 
+
                     <!-- 作品 03 -->
 
                     <article class="work-card">
@@ -1214,49 +1287,6 @@
 
                         </div>
 
-                        <div class="work-content">
-
-                            <div class="work-category">
-                                MUSIC × EDUCATION
-                            </div>
-
-                            <h3>
-                                天方夜譚交響組曲
-                            </h3>
-
-                            <p>
-                                將古典音樂內容轉化為學生容易理解、
-                                可以探索與互動的數位學習素材。
-                            </p>
-
-                            <div class="work-tools">
-
-                                <span class="tool">
-                                    Music Education
-                                </span>
-
-                                <span class="tool">
-                                    Digital Material
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 作品 04 -->
-
-                    <article class="work-card">
-
-                        <div class="work-image brown">
-
-                            <div class="work-number">
-                                04
-                            </div>
-
-                        </div>
 
                         <div class="work-content">
 
@@ -1265,18 +1295,23 @@
                             </div>
 
                             <h3>
-                                教學設計作品
+                                課程與教學設計
                             </h3>
 
                             <p>
-                                收錄課程設計、教案、學習活動與教學媒材，
-                                展現教育理論轉化為實際教學設計的過程。
+                                收錄課程規劃、教案設計與學習活動，
+                                探索如何將教育理念轉化為具體的學習經驗。
                             </p>
+
 
                             <div class="work-tools">
 
                                 <span class="tool">
                                     Lesson Design
+                                </span>
+
+                                <span class="tool">
+                                    Curriculum Design
                                 </span>
 
                                 <span class="tool">
@@ -1289,31 +1324,37 @@
 
                     </article>
 
-                </div>
 
 
-                <!-- 未來作品 -->
+                    <!-- 第四格：未來作品 -->
 
-                <div class="coming-soon">
+                    <div class="coming-soon-card">
 
-                    <span>
-                        COMING SOON
-                    </span>
+                        <div class="coming-soon-inner">
 
-                    <h3>
-                        未來作品將持續更新
-                    </h3>
+                            <span>
+                                COMING SOON
+                            </span>
 
-                    <p>
-                        這裡將放置未來的教育專題、實習成果、
-                        數位教材與其他創作作品。
-                    </p>
+                            <h3>
+                                未來作品
+                            </h3>
+
+                            <p>
+                                新的教育專題、數位教材與創作作品將持續更新。
+                            </p>
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -1323,6 +1364,7 @@
         <section id="experience">
 
             <div class="section-inner">
+
 
                 <div class="section-label">
                     03 / EXPERIENCE
@@ -1358,6 +1400,7 @@
                     </div>
 
 
+
                     <div class="timeline-item">
 
                         <div class="timeline-year">
@@ -1378,6 +1421,7 @@
                         </div>
 
                     </div>
+
 
 
                     <div class="timeline-item">
@@ -1402,6 +1446,7 @@
                     </div>
 
 
+
                     <div class="timeline-item">
 
                         <div class="timeline-year">
@@ -1423,11 +1468,13 @@
 
                     </div>
 
+
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -1437,6 +1484,7 @@
         <section id="research">
 
             <div class="section-inner">
+
 
                 <div class="section-label">
                     04 / RESEARCH
@@ -1466,6 +1514,7 @@
                         在高中階段所累積的學習成果。
                     </p>
 
+
                     <div class="research-tags">
 
                         <span class="research-tag">
@@ -1493,6 +1542,7 @@
         </section>
 
 
+
         <!-- =========================
              SKILLS
         ========================= -->
@@ -1500,6 +1550,7 @@
         <section id="skills">
 
             <div class="section-inner">
+
 
                 <div class="section-label">
                     05 / SKILLS
@@ -1532,6 +1583,7 @@
                     </div>
 
 
+
                     <div class="skill-card">
 
                         <div class="skill-icon">
@@ -1551,6 +1603,7 @@
                     </div>
 
 
+
                     <div class="skill-card">
 
                         <div class="skill-icon">
@@ -1568,11 +1621,13 @@
 
                     </div>
 
+
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -1582,6 +1637,7 @@
         <section id="contact">
 
             <div class="section-inner">
+
 
                 <div class="section-label">
                     06 / CONTACT
@@ -1597,14 +1653,14 @@
                     歡迎與我聯繫。
                 </p>
 
-                <!-- 把下面的 Email 換成自己的 -->
 
                 <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:u11201115@go.utaipei.edu.tw"
                     class="contact-email"
                 >
-                    your.email@example.com
+                    u11201115@go.utaipei.edu.tw
                 </a>
+
 
             </div>
 
@@ -1613,13 +1669,14 @@
     </main>
 
 
+
     <!-- =========================
          FOOTER
     ========================= -->
 
     <footer>
 
-        © 2026 Qian-Wei Yang.
+        © 2026 Chi-Wei Yang.
         Personal Portfolio.
 
     </footer>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML × CSS 網頁設計練習｜Qian-Wei Yang</title>
+    <meta name="description" content="第二週 HTML、CSS、RWD 與網頁無障礙學習成果">
+    <style>
+        :root {
+            --cream: #F6F0E8;
+            --cream-dark: #EDE2D4;
+            --pink: #D8A6A0;
+            --pink-light: #E9C8C3;
+            --brown: #6B5548;
+            --dark: #3F3530;
+            --sage: #A8AD98;
+            --white: #FFFDF9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(246, 240, 232, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(107,85,72,.08);
+        }
+
+        .nav {
+            max-width: 1100px;
+            height: 70px;
+            margin: auto;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            color: var(--brown);
+        }
+
+        .back {
+            font-size: 14px;
+            color: var(--brown);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px 110px;
+        }
+
+        .hero {
+            padding: 55px 0 80px;
+        }
+
+        .label {
+            color: var(--pink);
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Noto Serif TC", serif;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .intro {
+            max-width: 760px;
+            color: #71655e;
+            font-size: 16px;
+        }
+
+        .summary {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-size: 13px;
+            color: var(--brown);
+        }
+
+        section {
+            margin-top: 55px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .activity {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(107,85,72,.06);
+        }
+
+        .activity:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(107,85,72,.10);
+        }
+
+        .number {
+            font-family: Georgia, serif;
+            color: var(--pink);
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .activity h3 {
+            font-size: 22px;
+            margin: 8px 0 10px;
+        }
+
+        .activity p {
+            color: #766a63;
+            font-size: 14px;
+        }
+
+        .case {
+            background: var(--brown);
+            color: white;
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .case .label {
+            color: var(--pink-light);
+        }
+
+        .case h2 {
+            font-size: 34px;
+            margin-bottom: 25px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .case-item {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .case-item strong {
+            display: block;
+            color: var(--pink-light);
+            margin-bottom: 7px;
+        }
+
+        .case-item p {
+            color: rgba(255,255,255,.78);
+            font-size: 14px;
+        }
+
+        .checklist {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            color: var(--pink);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .note {
+            margin-top: 25px;
+            padding: 20px;
+            background: var(--cream-dark);
+            border-radius: 15px;
+            color: var(--brown);
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            background: var(--dark);
+            color: rgba(255,255,255,.65);
+            padding: 30px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+            .activity-grid,
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 35px;
+            }
+
+            .case {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="作品集.html" class="logo">QIAN-WEI</a>
+            <a href="作品集.html#works" class="back">← 回到作品集</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="label">02 / HTML × CSS PRACTICE</div>
+            <h1>第二週<br>網頁設計練習</h1>
+            <p class="intro">
+                本頁整理第二週課程的學習成果，依照課程要求練習
+                HTML、CSS、RWD（響應式網頁設計）與網頁無障礙檢核，
+                並記錄其中一項 CSS 修改與驗證的過程。
+            </p>
+
+            <div class="summary">
+                <span class="tag">HTML 01–04</span>
+                <span class="tag">CSS 05–09</span>
+                <span class="tag">RWD</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">GitHub Pages</span>
+            </div>
+        </div>
+
+        <section>
+            <div class="label">LEARNING TASKS</div>
+            <h2 class="section-title">本週課程內容</h2>
+
+            <div class="activity-grid">
+                <a href="materials/01-text/01-html-text.html" class="activity">
+                    <div class="number">01 / HTML</div>
+                    <h3>把小站變成我的</h3>
+                    <p>練習標題、段落、粗體、斜體、上下標等 HTML 文字標籤，並加入自己的學習目標。</p>
+                </a>
+
+                <a href="materials/02-media/02-html-media.html" class="activity">
+                    <div class="number">02 / HTML</div>
+                    <h3>讓小站有聲音</h3>
+                    <p>練習圖片、alt 替代文字、audio、video 與 SVG，將多媒體內容加入網頁。</p>
+                </a>
+
+                <a href="materials/03-plan/03-html-plan.html" class="activity">
+                    <div class="number">03 / HTML</div>
+                    <h3>整理我的學習計畫</h3>
+                    <p>使用 table、caption、tr、th、td、thead、tbody 製作學習計畫表格。</p>
+                </a>
+
+                <a href="materials/04-form/04-html-form.html" class="activity">
+                    <div class="number">04 / HTML</div>
+                    <h3>設計一張活動報名表</h3>
+                    <p>使用 label、input、select、radio、checkbox、textarea 與 button 製作表單。</p>
+                </a>
+
+                <a href="materials/05-style/05-css-style.html" class="activity">
+                    <div class="number">05 / CSS</div>
+                    <h3>同一份內容，換一種風格</h3>
+                    <p>練習文字顏色、字體大小、padding、margin、border-radius 與卡片樣式。</p>
+                </a>
+
+                <a href="materials/06-layout/06-css-layout.html" class="activity">
+                    <div class="number">06 / CSS</div>
+                    <h3>我的網站適合哪種版型？</h3>
+                    <p>使用 CSS Grid 調整欄位比例與網站版型，思考內容適合的呈現方式。</p>
+                </a>
+
+                <a href="materials/07-cards/07-css-cards.html" class="activity">
+                    <div class="number">07 / CSS</div>
+                    <h3>把內容排得整整齊齊</h3>
+                    <p>練習卡片排列、Flex、圖片尺寸與內容高度，使作品內容呈現一致。</p>
+                </a>
+
+                <a href="materials/08-rwd/08-css-rwd.html" class="activity">
+                    <div class="number">08 / CSS</div>
+                    <h3>從電腦版變成手機版</h3>
+                    <p>使用 RWD 與 @media 調整網頁，使內容在不同螢幕尺寸下都能正常閱讀。</p>
+                </a>
+
+                <a href="materials/09-accessibility/09-css-accessibility.html" class="activity">
+                    <div class="number">09 / CSS</div>
+                    <h3>先檢核，再修正無障礙問題</h3>
+                    <p>使用 WAVE 檢查網頁，找出問題後手動修改 HTML/CSS，再次確認改善結果。</p>
+                </a>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="case">
+                <div class="label">MODIFICATION & VERIFICATION</div>
+                <h2>CSS 修改與驗證紀錄</h2>
+
+                <div class="case-grid">
+                    <div class="case-item">
+                        <strong>原本的問題</strong>
+                        <p>作品卡片中的圖片尺寸不一致，排列時容易造成卡片高度不同，整體版面不夠整齊。</p>
+                    </div>
+
+                    <div class="case-item">
+                        <strong>我的修改</strong>
+                        <p>透過 CSS 統一卡片圖片高度，並使用 object-fit: cover 讓圖片維持一致的顯示比例。</p>
+                    </div>
+
+                    <div class="case-item">
+                        <strong>修改後驗證</strong>
+                        <p>重新整理網頁並檢查作品卡片排列，確認圖片高度一致；再縮小螢幕確認版面仍能正常顯示。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="label">FINAL CHECK</div>
+            <h2 class="section-title">課程完成檢查</h2>
+
+            <div class="checklist">
+                <ul>
+                    <li>完成 HTML 活動 01～04 的指定練習。</li>
+                    <li>完成 CSS 活動 05～09 的指定練習。</li>
+                    <li>確認修改後的 HTML 與 CSS 檔案能正常開啟。</li>
+                    <li>確認 GitHub Pages 上的公開頁面已更新。</li>
+                    <li>確認圖片、音訊、影片與 SVG 等素材路徑正確。</li>
+                    <li>確認網站在手機尺寸下仍能閱讀與操作。</li>
+                    <li>使用 WAVE 進行無障礙檢查並修正發現的問題。</li>
+                    <li>保留一項 CSS 案例的「原本問題 → 修改方式 → 驗證結果」紀錄。</li>
+                </ul>
+
+                <div class="note">
+                    本頁目前是作品集中的「第二週課程成果整理頁」。
+                    後續完成實際練習檔後，可以再把各活動的截圖、成果網址或實作內容補進來。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Qian-Wei Yang. HTML × CSS Practice.
+    </footer>
+</body>
+</html>

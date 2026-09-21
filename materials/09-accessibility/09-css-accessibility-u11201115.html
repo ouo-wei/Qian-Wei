@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先檢核，再修正無障礙問題｜楊千葳</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 24px; font-family: "Microsoft JhengHei", sans-serif; color: #243d46; background: #f5f2eb; line-height: 1.7; }
+h1 { line-height: 1.3; }
+a { color: #17596e; }
+.note { padding: 12px; background: #e5eeeb; border-radius: 10px; }
+.panel { background: #ffffff; padding: 20px; max-width: 720px; border-radius: 12px; }
+.intro { color: #243d46; }
+.status { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #3b8059; vertical-align: middle; }
+input, select { max-width: 100%; padding: 10px; font: inherit; }
+a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #17596e;
+  outline-offset: 3px;
+}
+</style>
+</head>
+<body>
+<h1>先檢核，再修正無障礙問題</h1>
+<p class="note">活動 09：依老師講義先找低文字對比與缺少表單標籤，再手動修正；另外檢查鍵盤焦點、狀態文字與 200% 放大。</p>
+
+<p><a href="https://wave.webaim.org/">開啟 WAVE 線上檢查</a>：發布後可將本頁公開網址交給 WAVE 檢查。</p>
+
+<main class="panel">
+  <h2>教育數位學習作品集</h2>
+  <p class="intro">歡迎瀏覽我的教育設計、數位教材與互動學習作品。</p>
+
+  <p>
+    活動狀態：
+    <span class="status" aria-hidden="true"></span>
+    <span>目前開放瀏覽（示範文字）</span>
+  </p>
+
+  <p><a href="#details">閱讀活動說明</a></p>
+
+  <p>
+    <label for="name">你的暱稱</label><br>
+    <input id="name" name="name" type="text" placeholder="請輸入虛構暱稱">
+  </p>
+
+  <p>
+    <label for="session">選擇瀏覽時段</label><br>
+    <select id="session" name="session">
+      <option>上午</option>
+      <option>下午</option>
+      <option>晚上</option>
+    </select>
+  </p>
+
+  <section id="details" tabindex="-1">
+    <h2>活動說明</h2>
+    <p>準備紙筆，瀏覽作品後記下你最感興趣的數位學習設計，再思考它如何幫助學習者理解內容。</p>
+  </section>
+</main>
+
+<section class="note">
+  <h2>我的修改紀錄</h2>
+  <ul>
+    <li>將 .intro 文字由低對比色改為 #243d46。</li>
+    <li>將暱稱欄位前的文字改成與 input id 對應的 label。</li>
+    <li>恢復並加強鍵盤焦點樣式。</li>
+    <li>將只有顏色的活動狀態補上可見文字。</li>
+    <li>實際 WAVE Errors／Contrast Errors 數量：待我發布頁面後檢查並填寫。</li>
+  </ul>
+</section>
+</body>
+</html>
